@@ -21,7 +21,7 @@ WELCOME() {
 
   #If that username has been used before, it should print
   USER=$($PSQL "SELECT name FROM users WHERE name='$USERNAME'")
-  if [[ ! -z $USER ]]
+  if [[ -z $USER ]]
   then
     echo -e "\nWelcome, $USERNAME! It looks like this is your first time here."
     INSERT_USER=$($PSQL "INSERT INTO users(name, best_game, games_played) VALUES('$USERNAME',NULL,NULL)")
