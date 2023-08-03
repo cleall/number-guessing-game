@@ -66,14 +66,12 @@ PLAY(){
     elif [[ $GUESS -gt $NUMBER ]]
     then
       ((GUESS_COUNTER++))
-      echo -e "\nIt's lower than that, guess again:"      
-      PLAY
+      echo -e "\nIt's lower than that, guess again:"
     # if guess is higher than secret number
     elif [[ $GUESS -lt $NUMBER ]]
     then
       ((GUESS_COUNTER++))
       echo -e "\nIt's higher than that, guess again:"
-      PLAY    
     fi
   done
 }
