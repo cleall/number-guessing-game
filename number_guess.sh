@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # read variables below from .env file
-if [ -f .env ]; then
-  export $(cat .env | xargs)
-fi
+#if [ -f .env ]; then
+#  export $(cat .env | xargs)
+#fi
 
 # define PSQL variable to query db
-PSQL="psql -X --username=$DB_USERNAME --dbname=$DB_NAME -t --no-align -c"
+#PSQL="psql --username=$DB_USERNAME --dbname=$DB_NAME -t --no-align -c"
+PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 
 WELCOME() {
   # prompt user for name
